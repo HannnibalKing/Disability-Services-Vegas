@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Do Crew - Las Vegas Bin Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            background: #4299e1;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #4299e1;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #48bb78;
+            margin: 1rem 0;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #f7fafc;
+            padding: 4rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #48bb78;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #48bb78;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Target Market */
+        .target-market {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .target-card {
+            background: #edf2f7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2d3748;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🗑️ Can Do Crew</div>
+                <div class="contact-info">
+                    <span>📞 (702) XXX-XXXX</span>
+                    <span>📍 Las Vegas, NV 89107</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>We Handle Your Bins So You Don't Have To</h1>
+            <p>Professional curbside bin service and cleaning for disabled, elderly, and mobility-challenged residents in Las Vegas</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Started Today</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Bin Placement & Retrieval</h3>
+                    <p>We place your bins at the curb Tuesday night and bring them back Wednesday evening</p>
+                    <div class="price">$10/week</div>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>✅ Every Tuesday & Wednesday</li>
+                        <li>✅ Rain or shine service</li>
+                        <li>✅ Respectful & reliable</li>
+                        <li>✅ No long-term contracts</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧽</div>
+                    <h3>Trash Can Cleaning</h3>
+                    <p>Professional pressure washing and sanitizing to eliminate odors and bacteria</p>
+                    <div class="price">$15/month</div>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>✅ Pressure wash & sanitize</li>
+                        <li>✅ Eco-friendly cleaners</li>
+                        <li>✅ Eliminate odors</li>
+                        <li>✅ Monthly or on-demand</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Complete Care Bundle</h3>
+                    <p>Both services combined for maximum convenience and savings</p>
+                    <div class="price">$20/month</div>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>✅ Weekly bin service</li>
+                        <li>✅ Monthly bin cleaning</li>
+                        <li>✅ Save $5 per month</li>
+                        <li>✅ Priority scheduling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Affordable Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Weekly Service</h3>
+                    <div class="price">$10</div>
+                    <p>Per week</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Bin placement & retrieval</li>
+                        <li>Reliable weekly service</li>
+                        <li>No commitment required</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Complete Bundle</h3>
+                    <div class="price">$20</div>
+                    <p>Per month</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>4 weekly bin services</li>
+                        <li>1 monthly bin cleaning</li>
+                        <li>Save $5 every month</li>
+                        <li>Priority customer support</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Annual Plan</h3>
+                    <div class="price">$400</div>
+                    <p>Per year</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>52 weeks of bin service</li>
+                        <li>Save $120 per year</li>
+                        <li>Never worry again</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <h3>Special Discounts Available</h3>
+                <p>👵 Seniors (65+): 10% off all services</p>
+                <p>🎖️ Veterans: 15% off all services</p>
+                <p>👨‍👩‍👧‍👦 Family plans: Up to 30% off additional households</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Market -->
+    <section id="who-we-serve" class="target-market">
+        <div class="container">
+            <h2 class="section-title">Who We Serve</h2>
+            <div class="target-grid">
+                <div class="target-card">
+                    <h3>👴 Elderly Residents</h3>
+                    <p>Seniors who find it difficult to manage heavy bins</p>
+                </div>
+                <div class="target-card">
+                    <h3>♿ Disabled Individuals</h3>
+                    <p>People with mobility challenges or disabilities</p>
+                </div>
+                <div class="target-card">
+                    <h3>🎖️ Veterans</h3>
+                    <p>Veterans who deserve our support and service</p>
+                </div>
+                <div class="target-card">
+                    <h3>👨‍👩‍👧 Busy Families</h3>
+                    <p>Families caring for elderly or disabled relatives</p>
+                </div>
+                <div class="target-card">
+                    <h3>🏢 Property Managers</h3>
+                    <p>Apartment complexes and HOAs with accessibility needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Free consultation • No obligation • Same-day quotes</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>📞 Call Us</h3>
+                    <p>(702) XXX-XXXX</p>
+                    <p>Mon-Fri: 8 AM - 6 PM</p>
+                </div>
+                <div class="contact-method">
+                    <h3>💬 Text Us</h3>
+                    <p>(702) XXX-XXXX</p>
+                    <p>Quick responses guaranteed</p>
+                </div>
+                <div class="contact-method">
+                    <h3>📧 Email Us</h3>
+                    <p>hello@candocrew.com</p>
+                    <p>We reply within 2 hours</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="tel:702XXXXXXX" class="btn btn-primary" style="margin: 10px;">Call Now</a>
+                <a href="sms:702XXXXXXX" class="btn btn-secondary" style="margin: 10px;">Text Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Can Do Crew. Serving Las Vegas with dignity and respect.</p>
+            <p>Licensed • Insured • Locally Owned</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add phone number click tracking
+        document.querySelectorAll('a[href^="tel"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Phone call initiated');
+                // Add analytics tracking here if needed
+            });
+        });
+    </script>
+</body>
+</html>
